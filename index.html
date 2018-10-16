@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字翻转</title>
+    <style>
+    span{
+        font-size: 100px;
+        font-family: "楷体";
+        position: relative;
+    }
+    body{
+        padding:300px;
+        color: coral;
+    }
+    span:hover:before{
+        transform:rotateY(40deg) skew(0deg,3deg);
+    }
+    span:hover:after{
+		transform:rotateY(40deg) skew(0deg,20deg);
+	}
+    span:before,span:after{
+        content: attr(data-q);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: left center 0px;
+        transition: all 0.2s linear 0s;
+    }
+    span:before{
+		color: aqua;
+		z-index: 3;
+		transform:rotateY(10deg);
+	}
+	span:after{
+		color:rgba(0,0,0,0.5);
+		z-index:2;
+		transform: rotateY(0deg) scale(1.1, 1);
+	}
+    
+    </style>
+</head>
+<body>
+    <span data-q="1">1</span>
+    <span data-q="0">0</span>
+    <span data-q="6">6</span>
+    <span data-q="的">的</span>
+    <span data-q="人">人</span>
+    <span data-q="好">好</span>
+    <span data-q="帅">帅</span>
+    <span data-q="啊">啊</span>
+    <span data-q="!">！</span>
+</body>
+</html>
